@@ -1,6 +1,17 @@
-(function injectJS() {
-    try {
-        var parentCssHead = document.head || document.getElementsByTagName('head')[0]; var parentStyles = document.createElement('style'); parentStyles.type = 'text/css';
-        var parentCssStyles = '@media only screen and (max-width: 768px) { #ymDivCircle { bottom: 75px !important; } @media only screen and (min-width: 768px) { #ymDivCircle { bottom: 50vh !important; } }'; if (parentStyles.styleSheet) { parentStyles.styleSheet.cssText = parentCssStyles; } else { parentStyles.appendChild(document.createTextNode(parentCssStyles)); } parentCssHead.appendChild(parentStyles);
-    } catch (e) { console.error("failed while inserting to iFrame", e); }
+(function () {
+    var parentCssHead = document.head || document.getElementsByTagName('head')[0];
+    var parentStyles = document.createElement('style');
+    parentStyles.type = 'text/css';
+    var parentCssStyles = '#ymDivCircle { bottom: 100px !important; } #ym-notification { bottom: 183px !important; }';
+    if (parentStyles.styleSheet) {
+        console.log("A")
+        parentStyles.styleSheet.cssText = parentCssStyles;
+    } else {
+        console.log("B")
+        parentStyles.appendChild(document.createTextNode(parentCssStyles));
+        console.log(parentStyles)
+    }
+    console.log(parentStyles)
+    parentCssHead.appendChild(parentStyles);
+    console.log(parentCssHead)
 })();
