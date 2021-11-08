@@ -2,7 +2,7 @@
     var parentCssHead = document.head || document.getElementsByTagName('head')[0];
     var parentStyles = document.createElement('style');
     parentStyles.type = 'text/css';
-    var parentCssStyles = '#ymDivCircle { bottom: 100px !important; } #ym-notification { bottom: 183px !important; }';
+    var parentCssStyles = '#ymDivCircle { bottom: 100px !important; right: 10px !important; } #ym-notification { bottom: 183px !important; } #ymFrameHolder { right: 10px !important; }';
     if (parentStyles.styleSheet) {
         parentStyles.styleSheet.cssText = parentCssStyles;
     } else {
